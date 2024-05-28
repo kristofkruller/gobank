@@ -1,0 +1,30 @@
+# Bináris fájlok
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Fordítási eredmények
+bin/
+out/
+
+# IDE beállítások és munkafájlok
+# .vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Go modul fájlok
+vendor/
+
+# Go test cache
+*.test
+
+# Go coverage
+*.out
+
+# Go build cache
+go-build/

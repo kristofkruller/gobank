@@ -53,7 +53,9 @@ func (s *APIServer) handleAccount(w http.ResponseWriter, r *http.Request) error 
 }
 
 func (s *APIServer) handleGetAccount(w http.ResponseWriter, r *http.Request) error {
-	return nil
+	account := NewAccount("Test", "Jason")
+
+	return WriteJson(w, http.StatusOK, account)
 }
 
 func (s *APIServer) handleMakeAccount(w http.ResponseWriter, r *http.Request) error {
@@ -70,8 +72,8 @@ func (s *APIServer) handleTransfer(w http.ResponseWriter, r *http.Request) error
 
 // JSON
 func WriteJson(w http.ResponseWriter, status int, v any) error {
-	w.WriteHeader(status)
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(status)
 	return json.NewEncoder(w).Encode(v)
 }
 
